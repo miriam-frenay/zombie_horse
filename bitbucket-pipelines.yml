@@ -1,0 +1,11 @@
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: 'Build and Test'
+          script:
+            - '. build.sh'
+            - '[ -f ${PWD##*/}.zip ]'
+            - '[ -f ${PWD##*/}_resources.zip ] || [ ! -d resources ]'
