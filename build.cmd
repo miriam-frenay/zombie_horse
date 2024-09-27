@@ -1,6 +1,6 @@
-:: Get folder name
-for %%d in (.) do set "dir=%%~nxd"
+:: Get project name
+for %%d in (.) do set "PROJECT=%%~nxd"
 :: Zip data pack
-tar caf %dir%.zip pack.mcmeta LICENSE.txt data
+tar caf %PROJECT%.zip pack.mcmeta LICENSE.txt data
 :: Optionally zip resource pack
-if exist resources tar caf %dir%_resources.zip --strip-components=1 resources
+if exist resources tar caf %PROJECT%_resources.zip --strip-components=1 resources
