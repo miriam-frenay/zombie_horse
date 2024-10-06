@@ -1,6 +1,18 @@
 {
   "pack": {
     "pack_format": 26,
+    "supported_formats": {
+      "min_inclusive": 26,
+      "max_inclusive": 48
+    },
     "description": "Adds zombie horses to the dark forest"
+  },
+  "overlays": {
+    "entries": [
+      {
+        "formats": 48,
+        "directory": "1-21-overlay"
+      }
+    ]
   }
 }
