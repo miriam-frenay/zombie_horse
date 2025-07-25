@@ -1,2 +1,4 @@
 tag @s add zombie_horse.checked
-execute if biome ~ ~ ~ dark_forest if function zombie_horse:predicates/spawn_chance run function zombie_horse:spawn
+execute unless biome ~ ~ ~ dark_forest run return 0
+execute store result score $random zombie_horse.state run random value 1..100
+execute if score $random zombie_horse.state <= $spawn_chance zombie_horse.config run function zombie_horse:spawn
